@@ -120,14 +120,14 @@ var profile = {
     'dojo-publish-privates': 0,
 
     // This application is pure AMD, so get rid of the legacy loader.
-    'dojo-sync-loader': 0,
+    'dojo-sync-loader': 1,
 
     // `dojo-xhr-factory` relies on `dojo-sync-loader`, which we have removed.
     'dojo-xhr-factory': 0,
 
     // We are not loading tests in production, so we can get rid of some test sniffing code.
     'dojo-test-sniff': 0,
-    'extend-esri': 0,
+    'extend-esri': 1,
 
     "config-deferredInstrumentation": 0,
     "config-dojo-loader-catches": 0,
@@ -158,7 +158,7 @@ var profile = {
     parseOnLoad: true,
     deps: ['app/main'],
     hasCache: {
-      'extend-esri': 0,
+      'extend-esri': 1,
       'dojo-has-api': 1,
       'dojo-undef-api': 0
     },

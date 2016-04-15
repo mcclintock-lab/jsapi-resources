@@ -1,26 +1,50 @@
-define([
-  "esri/map",
-  "esri/layers/VectorTileLayer",
-  "esri/layers/FeatureLayer",
-  "esri/dijit/Measurement",
-  "dojo/domReady!"
-], function (
-  Map, VectorTileLayer, FeatureLayer, Measurement
-) {
-  var map = new Map("map-area", {
-    center: [-82.44109, 35.6122],
-    zoom: 15,
-    minZoom: 7
-  });
-  var vtlayer = new VectorTileLayer("https://www.arcgis.com/sharing/rest/content/items/f96366254a564adda1dc468b447ed956/resources/styles/root.json");
-  map.addLayer(vtlayer);
-  var featureLayer = new FeatureLayer("https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Landscape_Trees/FeatureServer/0");
-
-  map.addLayer(featureLayer);
-  map.on('load', function() {
-    var measurement = new Measurement({
-      map: map
-    }, document.getElementById('measureDiv'));
-    measurement.startup();
-  });
+define([ 'dijit/CheckedMenuItem',
+  'dijit/MenuSeparator',
+  'dijit/PopupMenuItem',
+  'dijit/_base',
+  'dijit/form/ComboButton',
+  'dijit/form/VerticalSlider',
+  'dojo/_base/Color',
+  'dojo/dom',
+  'dojo/dom-construct',
+  'esri/InfoTemplate',
+  'esri/SpatialReference',
+  'esri/config',
+  'esri/dijit/Geocoder',
+  'esri/dijit/Measurement',
+  'esri/dijit/Popup',
+  'esri/dijit/Scalebar',
+  'esri/geometry',
+  'esri/geometry/Circle',
+  'esri/geometry/Extent',
+  'esri/geometry/Point',
+  'esri/geometry/jsonUtils',
+  'esri/geometry/webMercatorUtils',
+  'esri/graphic',
+  'esri/layers/ArcGISDynamicMapServiceLayer',
+  'esri/layers/ArcGISImageServiceLayer',
+  'esri/layers/ArcGISTiledMapServiceLayer',
+  'esri/layers/FeatureLayer',
+  'esri/layers/GraphicsLayer',
+  'esri/layers/WMSLayer',
+  'esri/layers/WMSLayerInfo',
+  'esri/layers/WebTiledLayer',
+  'esri/layers/rasterFormats/JpgPlus',
+  'esri/layers/rasterFormats/Png',
+  'esri/layers/rasterFormats/Raw',
+  'esri/map',
+  'esri/renderers/Renderer',
+  'esri/renderers/SimpleRenderer',
+  'esri/renderers/UniqueValueRenderer',
+  'esri/renderers/jsonUtils',
+  'esri/symbol',
+  'esri/symbols/jsonUtils',
+  'esri/tasks/FeatureSet',
+  'esri/tasks/GeometryService',
+  'esri/tasks/IdentifyParameters',
+  'esri/tasks/IdentifyTask',
+  'esri/tasks/query',
+  'esri/toolbars/draw',
+  'esri/toolbars/edit',
+  'esri/units' ], function () {
 });
