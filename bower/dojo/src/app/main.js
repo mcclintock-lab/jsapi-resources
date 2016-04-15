@@ -46,5 +46,6 @@ define([ 'dijit/CheckedMenuItem',
   'esri/tasks/query',
   'esri/toolbars/draw',
   'esri/toolbars/edit',
-  'esri/units' ], function () {
+  'esri/units',
+  'dojo/fx/Toggler' ], function () {
 });
